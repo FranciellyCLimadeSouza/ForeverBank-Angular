@@ -6,12 +6,12 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { User } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
 import { response } from 'express';
-
+import { HeaderHomeComponent } from '../header-home/header-home.component';
 @Component({
   selector: 'app-cadastro',
   standalone: true, // Significa que este componente é "autossuficiente": significa que todos os recursos por ele, componente, que serão usados por ele, ficam aqui disponíveis - sem a necessidade de serem registrados com o decorator @NgModule
 
-  imports: [FormsModule, RouterLink, CommonModule],
+  imports: [FormsModule, RouterLink, CommonModule,HeaderHomeComponent],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css',
  
@@ -43,7 +43,7 @@ export class CadastroComponent {
 
     // vamos usar a role selecionada para compor o restante do conjunto de dados para serem enviados para o service
 
-    //this.authService.register(this.user, roleName): até este momento, chamamos o método register, que compõe o service, à sua execução
+   // this.authService.register(this.user, roleName)//: até este momento, chamamos o método register, que compõe o service, à sua execução
 
     // método que "efetivamente" executa o elemento Observable
     this.authService.register(this.user, roleName).subscribe({

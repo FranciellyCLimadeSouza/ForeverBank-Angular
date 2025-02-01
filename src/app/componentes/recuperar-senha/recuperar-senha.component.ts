@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { HeaderHomeComponent } from '../header-home/header-home.component';
 @Component({
-  selector: 'app-perguntas',
+  selector: 'app-recuperar-senha',
   standalone: true,
   imports: [HeaderHomeComponent],
-  templateUrl: './perguntas.component.html',
-  styleUrl: './perguntas.component.css'
+  templateUrl: './recuperar-senha.component.html',
+  styleUrl: './recuperar-senha.component.css'
 })
-export class PerguntasComponent {
+export class RecuperarSenhaComponent {
 
 }

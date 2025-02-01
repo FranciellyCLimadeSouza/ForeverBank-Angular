@@ -1,19 +1,10 @@
-  <div class="header">
-    <nav>
-      <ul>
-        <li><a (click)="goToPraVc()">Para Você</a></li>
-        <li><a (click)="goToPerguntas()">Perguntas</a></li>
-        <li><button (click)="goToLogin()" class="login-button">Login <span class="icon">→</span></button></li>
-        </ul>
-    </nav>
-  </div>
-  
+<app-header-home></app-header-home>
   <div class="background">
     <h1 class="title">ForeverBank</h1>
     <div class="account-section">
       <h2>Abra sua conta</h2>
       <form (ngSubmit)="goToCadastro()">
-        <input type="text" placeholder="Digite seu CPF" [(ngModel)]="cpf" name="cpf" required>
+        <input type="text" placeholder="Digite seu email" [(ngModel)]="email" name="email" required>
         <button type="submit">Continuar</button>
       </form>
     </div>

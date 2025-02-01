@@ -5,11 +5,13 @@ import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 // import { User } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
+import { HeaderHomeComponent } from '../header-home/header-home.component';
+import { RecuperarSenhaComponent } from '../recuperar-senha/recuperar-senha.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink],
+  imports: [FormsModule, CommonModule,HeaderHomeComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -27,7 +29,9 @@ credentials: any = {
   }
 
   constructor (private authService: AuthService, private router: Router) {}
-
+  goToRecuperar(): void {
+    this.router.navigate(['/recuperar-senha']);
+  }
   // 3º passo: define 
   onSubmit(): void {
     // fazer o acesso à DI do service

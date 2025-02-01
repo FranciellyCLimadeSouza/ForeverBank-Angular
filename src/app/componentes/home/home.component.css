@@ -34,37 +34,7 @@
     background-color: #0056b3;
   }
   /* Estilização do header */
-.header {
-    width: 100%;
-    background-color: #333;
-    padding: 10px 0;
-  }
-  
-  .header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .header nav ul li {
-    margin: 0 15px;
-  }
-  
-  .header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .header nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  .login-button .icon {
-    margin-left: 5px;
-  }
+
   
   /* Estilização do fundo e título */
   .background {
@@ -93,7 +63,7 @@
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
-    font-family: 'arial black', sans-serif;
+    font-family: 'impact', sans-serif;
   }
   
   /* Estilização da seção de conta */

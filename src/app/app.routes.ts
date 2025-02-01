@@ -9,7 +9,8 @@ import { NotesListComponent } from './componentes/notes-list/notes-list.componen
 import { NotesFormComponent } from './componentes/notes-form/notes-form.component';
 import { PerguntasComponent } from './componentes/perguntas/perguntas.component';
 import { PravcComponent } from './componentes/pravc/pravc.component';
-
+import { HeaderHomeComponent } from './componentes/header-home/header-home.component';
+import { RecuperarSenhaComponent } from './componentes/recuperar-senha/recuperar-senha.component';
 export const routes: Routes = [
     {path: 'home', component: HomeComponent}, 
     {path: 'login', component: LoginComponent}, 
@@ -19,7 +20,9 @@ export const routes: Routes = [
 
             Então, para acessar o componente login, a partir da aplicação, o endereço informado para o browser deve ser: http://localhost:4200/login
     */
+    {path: 'header-home', component: HeaderHomeComponent},
    {path: 'cadastro', component: CadastroComponent},
+   {path: 'recuperar-senha', component: RecuperarSenhaComponent}, 
    {path: 'perguntas', component: PerguntasComponent},
    {path: 'pravc', component: PravcComponent},
    {path: 'anotacoes/listar_anotacoes', component: NotesListComponent},

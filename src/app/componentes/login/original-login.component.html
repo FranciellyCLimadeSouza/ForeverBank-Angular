@@ -1,0 +1,35 @@
+<div class = "login-container">
+
+    <h2>{{ tituloComp }}</h2>
+<!-- Definir o formulário -->
+<form (ngSubmit) = "onSubmit()"> 
+    
+    <!-- Estamos realizando, aqui, um event-binding.
+        
+    ngSubmit: é a diretiva que define a "natureza"/funcionalidade do event binding, ou seja, enviar dados do formulário para a camada lógica do componente -->>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" [(ngModel)] = "credentials.email" name="email" required /> <!--two-binding: vinculação de dados em via de duas mãos/mão dupla. O colchete [] é a definição de property binding -> nada mais é do que a camada lógica enviar dados para a view; o parênteses é a definição de event binding -> que, a partir da view, vincula-se dados na camada lógica, alterando, necessariamente, o valor original de alguma propriedade; o two-way binding é composto por estes dois elementos e um terceiro: a diretiva onChange (implícita) que observa se ocorre alguma alteração no pedaço na view que ele ocupa -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" [(ngModel)] = "credentials.password" name="password" required /> 
+        </div>
+
+        <div class="form-group">
+            <label for="fullname">Nome Completo</label>
+            <input type="text" id="fullname" [(ngModel)] = "credentials.fullname" name="fullname" required /> 
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Cadastrar
+        </button>
+
+        <p>
+            Já tem uma conta?<a routerLink = "/cadastro"> Acesse </a>
+        </p>
+
+        </div>
+
+</form>
+
