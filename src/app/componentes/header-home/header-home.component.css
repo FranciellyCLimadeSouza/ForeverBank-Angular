@@ -25,7 +25,17 @@
   .header nav ul li a:hover {
     text-decoration: underline;
   }
-  
+  .login-button  {
+    background: #ffd700;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+button:hover {
+    background-color: #ff5800;
+  }
   .login-button .icon {
     margin-left: 5px;
   }

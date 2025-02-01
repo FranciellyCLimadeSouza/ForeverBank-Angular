@@ -53,7 +53,7 @@
   }
   
   .title {
-    color: yellow;
+    color: #ffd700;
     font-size: 84px;
     margin-top: -35%;
     margin-left: -35%;
@@ -84,7 +84,7 @@
   }
   
   .account-section input {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -94,14 +94,15 @@
   .account-section button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: white;
+    background: #ffd700;
     border: none;
     border-radius: 5px;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
   }
   
   .account-section button:hover {
-    background-color: #0056b3;
+    background-color: #ff5800;
   }
   
