@@ -4,13 +4,15 @@
         <h1>ForeverBank</h1>
     </div>
     <div class="login-container">
+        <form (ngSubmit) = "onSubmit()"> 
         <h2>Login</h2>
         <label for="email">Email</label>
-        <input type="text" id="email" name="email" required>
-        <label for="senha">Senha (8 dígitos)</label>
-        <input type="password" id="senha" name="senha" required>
+        <input type="email" id="email" name="email"  [(ngModel)] = "credentials.email" name="email" required />
+        <label for="password">Senha (8 dígitos)</label>
+        <input type="password" id="password" name="senha"  [(ngModel)] = "credentials.password" name="password" required />
         <small class="password-hint">Use a senha cadastrada</small>
         <a (click)="goToRecuperar()">Esqueci a senha</a>
         <button type="submit">Acessar <i class="arrow-icon">→</i></button>
+    </form>
     </div>
 </div>
