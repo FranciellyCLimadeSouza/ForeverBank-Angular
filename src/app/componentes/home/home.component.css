@@ -1,0 +1,137 @@
+.home-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .home-container h2 {
+    text-align: center;
+  }
+  
+  .home-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .home-container li {
+    margin-bottom: 10px;
+  }
+  
+  .home-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .home-container button:hover {
+    background-color: #0056b3;
+  }
+  /* Estilização do header */
+.header {
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  .header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header nav ul li {
+    margin: 0 15px;
+  }
+  
+  .header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-button .icon {
+    margin-left: 5px;
+  }
+  
+  /* Estilização do fundo e título */
+  .background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../../assets/home/home_fundo.png'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .title {
+    color: yellow;
+    font-size: 84px;
+    margin-top: -35%;
+    margin-left: -35%;
+    text-align: left;
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    font-family: 'arial black', sans-serif;
+  }
+  
+  /* Estilização da seção de conta */
+  .account-section {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  .account-section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .account-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .account-section button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .account-section button:hover {
+    background-color: #0056b3;
+  }
+  
