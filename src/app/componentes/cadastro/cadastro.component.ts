@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { User } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
 import { response } from 'express';
 import { HeaderHomeComponent } from '../header-home/header-home.component';
+import { LoginComponent } from '../login/login.component';
 @Component({
   selector: 'app-cadastro',
   standalone: true, // Significa que este componente é "autossuficiente": significa que todos os recursos por ele, componente, que serão usados por ele, ficam aqui disponíveis - sem a necessidade de serem registrados com o decorator @NgModule
@@ -35,7 +36,9 @@ export class CadastroComponent {
   constructor (private authService: AuthService, private router: Router) {}
 
   // 4º passo: definir um método onSubmit(): este método será chamado quando o usuário, no final do cadastro, clicar no botão para enviar os dados para o service que, por sua vez, vai enviar os dados para o endpoint no backend para que, assim, os dados possam ser armazenados no DB.
-
+  goToLogin(): void {
+    this.router.navigate(['/login']);
+  }
   onSubmit(): void {
     // definir uma constante para receber como valor a role referente a este usuário.
 

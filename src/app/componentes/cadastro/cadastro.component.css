@@ -104,6 +104,9 @@ a:hover {
   align-items: center;
   background: linear-gradient(to bottom, orange, red);
   font-family: Arial, sans-serif;
+  background-image: url('../../../assets/home/cadastro.png'); /* Substitua pelo caminho da sua imagem */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 .left-side {
   flex: 1;
@@ -117,7 +120,7 @@ a:hover {
   margin-right: 15%;
   align-items: center;
   margin-top: 0%;
-  background-image: url('../../../assets/home/segurando_cartao.png'); /* Substitua pelo caminho da sua imagem */
+  background-image: url('../../../assets/home/cadastro.png'); /* Substitua pelo caminho da sua imagem */
 }
 .left-side h1 {
   font-size: 84px;
