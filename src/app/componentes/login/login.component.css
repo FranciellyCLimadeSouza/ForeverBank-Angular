@@ -109,11 +109,19 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    height: 80vh;
+    background-size: cover;
+    background-size: 100% 100%;
+    margin-top: 40%;
+    margin-left: 15%;
+    margin-right: 15%;
     align-items: center;
-    margin-top: -20%;
+    margin-top: 0%;
+    background-image: url('../../../assets/home/segurando_cartao.png'); /* Substitua pelo caminho da sua imagem */
 }
 .left-side h1 {
     font-size: 84px;
+    margin-top: -50%;
     color: white;
     text-shadow: 
     -1px -1px 0 #000,  
@@ -126,8 +134,9 @@
 .login-container {
     background: white;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+   border: 1px solid #ccc;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
     width: 300px;
     margin-right: 50px;
 }
