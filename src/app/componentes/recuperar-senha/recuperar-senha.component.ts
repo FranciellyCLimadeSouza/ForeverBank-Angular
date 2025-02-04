@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms'; // este recurso é necessário par
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { User } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
+import { Usuario } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
 import { response } from 'express';
 import { HeaderHomeComponent } from '../header-home/header-home.component';
 import { LoginComponent } from '../login/login.component';
@@ -16,7 +16,7 @@ import { LoginComponent } from '../login/login.component';
 })
 export class RecuperarSenhaComponent {
  errorMessage: string = ''
- user: User = new User('', '', '')
+ //user: Usuario = new Usuario('', '', '')
 
   constructor (private authService: AuthService, private router: Router) {}
 
