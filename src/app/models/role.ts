@@ -2,11 +2,11 @@ import { Usuario } from "./user";
 
 export class Role {
     id?: number
-    name: string
+    roleName: string
     usuarios: Usuario[]
 
-    constructor(name: string, usuarios: Usuario[]){
-        this.name = name
+    constructor(roleName: string, usuarios: Usuario[]){
+        this.roleName = roleName
         this.usuarios = usuarios
     }
 }
