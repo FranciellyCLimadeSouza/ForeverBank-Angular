@@ -34,19 +34,19 @@ export class ContaService {
 
 // 5º passo: definir o método/tarefa assincrona que cria uma nova anotação e armazena na base
 createConta(conta: Conta): Observable<Conta>{
-    return this.http.post<Conta>(`${this.apiUrl}/api/Conta/criar`, conta,{withCredentials: true})
+    return this.http.post<Conta>(`${this.apiUrl}/api/Conta/getContas`, conta,{withCredentials: true})
     .pipe(
         catchError(this.handleError)
-    )
+    )//@postmapping
 }
   
 
   // 3º passo: definir a requisição que obtem todas as anotações armazenadas na base
   getConta(): Observable<Conta[]>{
-    return this.http.get<Conta[]>(`${this.apiUrl}/api/Conta/pegar`,{withCredentials: true})
+    return this.http.get<Conta[]>(`${this.apiUrl}/api/Conta/createAccount`,{withCredentials: true})
     .pipe(
       catchError(this.handleError)
-    )
+    )//@getmapping
   }
 
   /*
@@ -68,7 +68,7 @@ createConta(conta: Conta): Observable<Conta>{
       return this.http.put<Conta>(`${this.apiUrl}/api/Conta/${id}`, conta, {withCredentials: true})
       .pipe(
         catchError(this.handleError)
-      )
+      )//@putmapping
     }
 
     /* 7º passo: definir o método/tarefa assincrona que exclui uma anotação desde que esteja devidamente armazenada na base
