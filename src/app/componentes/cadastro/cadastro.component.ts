@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 // Fazer as importações necessárias
 import { FormsModule } from '@angular/forms'; // este recurso é necessário para a operação com formulários do angular
-import { AuthService } from '../../services/auth.service';
+//import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { User } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
+import { Usuario } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
 import { response } from 'express';
 import { HeaderHomeComponent } from '../header-home/header-home.component';
 import { LoginComponent } from '../login/login.component';
@@ -25,7 +25,7 @@ export class CadastroComponent {
 
   // 1º passo: definir uma prop para receber como valor a instância do model User
 
-  user: User = new User('', '', '')
+  //user: Usuario = new Usuario('', '', '')
 
   // 2º passo: inicializar um novo usuário seguindo alguns passos importantes
   selectedRole: string = 'ROLE_USER' // esta será considerada a role padrão do usuário
@@ -49,7 +49,7 @@ export class CadastroComponent {
    // this.authService.register(this.user, roleName)//: até este momento, chamamos o método register, que compõe o service, à sua execução
 
     // método que "efetivamente" executa o elemento Observable
-    this.authService.register(this.user, roleName).subscribe({
+    /*this.authService.register(this.user, roleName).subscribe({
       next: (response) => {
         console.log('Usuário cadastrado com sucesso!', response.message)
         this.router.navigate(['/login'])
@@ -76,6 +76,6 @@ export class CadastroComponent {
       
     })
   }
+*/
 
-
-}
+}}
