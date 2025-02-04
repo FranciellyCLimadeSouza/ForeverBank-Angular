@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // este recurso é necessário para a operação com formulários do angular
-import { AuthService } from '../../services/auth.service';
+import { AutenticacaoService } from '../../services/auth.service';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Usuario } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
@@ -18,7 +18,7 @@ export class RecuperarSenhaComponent {
  errorMessage: string = ''
  //user: Usuario = new Usuario('', '', '')
 
-  constructor (private authService: AuthService, private router: Router) {}
+  constructor (private authService: AutenticacaoService, private router: Router) {}
 
   goToLogin(): void {
     this.router.navigate(['/login']);
