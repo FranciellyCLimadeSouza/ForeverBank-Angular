@@ -39,7 +39,7 @@ credentials: any = {
     this.authService.login(this.credentials).subscribe({
       next: (response) => {
         console.log('Login bem sucedido!', response.message)
-        this.router.navigate(['/notes']) // se tudo ocorrer bem, seremos, depois da autenticação redirecionados para a tela de anotações
+        this.router.navigate(['/conta-inicial']) // se tudo ocorrer bem, seremos, depois da autenticação redirecionados para a tela de anotações
 
       },
 

@@ -1,0 +1,52 @@
+.sidebar {
+    width: 10%;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 10px;
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100px;
+    background: none;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+   
+  }
+  
+  .menu-item .icon-home::before {
+    content: '🏠';
+  }
+  
+  .menu-item .icon-conta-corrente::before {
+    content: '🏦';
+  }
+  
+  .menu-item .icon-pix::before {
+    content: '💸';
+  }
+  
+  .menu-item .icon-pagamentos::before {
+    content: '💳';
+  }
+  
+  .menu-item .icon-cartoes::before {
+    content: '💳';
+  }
+  
+  .menu-item .icon-investimentos::before {
+    content: '📈';
+  }
+  .menu-item .icon-pontinhos {
+    background-image: url('../../../assets/menu_lateral/3Pontos.jpg');
+ }
+  button:hover {
+    background-color: #ff5800;
+  }

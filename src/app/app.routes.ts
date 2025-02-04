@@ -11,9 +11,12 @@ import { PerguntasComponent } from './componentes/perguntas/perguntas.component'
 import { PravcComponent } from './componentes/pravc/pravc.component';
 import { HeaderHomeComponent } from './componentes/header-home/header-home.component';
 import { RecuperarSenhaComponent } from './componentes/recuperar-senha/recuperar-senha.component';
+import { SidebarComponent } from './componentes/sidebar/sidebar.component';
+import { ContaInicialComponent } from './componentes/conta-inicial/conta-inicial.component';
 export const routes: Routes = [
     {path: 'home', component: HomeComponent}, 
     {path: 'login', component: LoginComponent}, 
+    {path: 'conta', component: ContaInicialComponent}, 
     /* acima
             a rota está sendo criada da seguinte forma
             path: determina o nome da rota, ou seja, qual é o valor que devemos colocar na url do browser
