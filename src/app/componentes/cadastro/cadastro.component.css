@@ -1,16 +1,22 @@
 .login-container {
-
+  justify-content: center;
+  align-items: center;
   max-width: 400px;
-
+  line-height: 1.5 !important;
   margin: 50px auto;
-
+  top: -30%!important;
+  margin-bottom: 70px !important;
+  right: 20%;
+  background-color: white;
   padding: 20px;
+  border-radius: 10px;
+  /*padding: 20px;
 
   border: 1px solid #ccc;
 
   border-radius: 5px;
 
-  background-color: #f9f9f9;
+  background-color: #f9f9f9;*/
 
 }
 
@@ -99,14 +105,15 @@ a:hover {
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, orange, red);
   font-family: Arial, sans-serif;
-  background-image: url('../../../assets/home/cadastro.png'); /* Substitua pelo caminho da sua imagem */
+  background:linear-gradient(to right, #ff5800,#890078);
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .left-side {
   flex: 1;
@@ -123,25 +130,26 @@ a:hover {
   background-image: url('../../../assets/home/cadastro.png'); /* Substitua pelo caminho da sua imagem */
 }
 .left-side h1 {
-  font-size: 84px;
-  margin-top: -50%;
   color: white;
-  text-shadow: 
+  font-size: 80px;
+  justify-content: center;
+  align-items: center;
+  /*text-shadow: 
   -1px -1px 0 #000,  
   1px -1px 0 #000,
   -1px 1px 0 #000,
-  1px 1px 0 #000;
-  font-family: 'impact', sans-serif;
+  1px 1px 0 #000;*/
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
 }
 .login-container {
   background: white;
   padding: 20px;
   border-radius: 10px;
- border: 1px solid #ccc;
-  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
   width: 300px;
-  margin-right: 50px;
+  margin-right: 450px;
 }
 .login-container h2 {
   margin-bottom: 20px;
