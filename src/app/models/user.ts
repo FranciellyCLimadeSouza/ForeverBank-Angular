@@ -1,31 +1,45 @@
 // este é nosso model domain referente aos dados de usuario que circularão 
 // pelo projeto
 
-import { Note } from "./note";
+//import { Note } from "./note";
 import { Role } from "./role";
 
-export class User {
+export class Usuario {
     id: number | undefined
+    nomeCompleto: string
     email: string
-    password: string
-    fullname: string
-    enabled:boolean
+    telefone: number
+    endereco: string
+    dataNascimento: Date
+    cpfCnpj: string 
+    senha: string
+    autenticacao: string
+    enabled: boolean
     roles: Role[]
-    notes: Note[]
     
-    constructor(email: string,
-        password: string,
-        fullname: string,
-        enabled: boolean = true,
-        roles: Role[] = [],
-        notes: Note[] = []
+    
+    constructor(
+        nomeCompleto: string,
+        email: string,
+        telefone: number,
+        endereco: string,
+        dataNascimento: Date,
+        cpfCnpj: string,
+        senha: string,
+        autenticacao: string,
+        enabled: boolean,
+        roles: Role[] = []
         
     ) {
         this.email = email
-        this.password = password
-        this.fullname = fullname
+        this.nomeCompleto = nomeCompleto
+        this.telefone = telefone
+        this.endereco = endereco
+        this.dataNascimento = dataNascimento
+        this.cpfCnpj = cpfCnpj
+        this.senha = senha
+        this.autenticacao = autenticacao
         this.enabled = enabled
         this.roles = roles
-        this.notes = notes
     }
 }
