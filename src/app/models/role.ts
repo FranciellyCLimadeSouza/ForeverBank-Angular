@@ -1,12 +1,12 @@
-import { User } from "./user";
+import { Usuario } from "./user";
 
 export class Role {
     id?: number
     name: string
-    users: User[]
+    usuarios: Usuario[]
 
-    constructor(name: string, users: User[]){
+    constructor(name: string, usuarios: Usuario[]){
         this.name = name
-        this.users = users
+        this.usuarios = usuarios
     }
 }
