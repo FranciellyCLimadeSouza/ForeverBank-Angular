@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 
 // NgClass: Diretiva de estilo angular que tem como propósito principal auxiliar e aplicar em determinados pedaços da view algum estilo customizado.
 import { CommonModule, DatePipe, NgClass} from '@angular/common';
-import { NoteService } from '../../services/note.service';
-import { AuthService } from '../../services/auth.service';
+import { ContaService } from '../../services/conta.service';
+import { AutenticacaoService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
-import { Note } from '../../models/note';
+import { Conta } from '../../models/conta';
 import { from } from 'rxjs';
 
 @Component({
@@ -29,7 +29,7 @@ tituloComp: string = 'Listar Anotações'
   // 1º Passo: definir 3 props, a 1ª receberá como valor um array vazio para armazenar as anotações; a 2ª receberá, inicialmente, um valor nulo pois deve ser atribuída quando o usuário acessar, esta área restrita, o valor do e-mail para o usuário. A 3ª receberá um valor booleano.
 
   // 1ª:
-  notes: Note[] = []
+  contas: Conta[] = []
 
   // 2ª:
 
@@ -42,8 +42,8 @@ tituloComp: string = 'Listar Anotações'
   // 2º Passo: definir o construtor e as DIs.
 
   constructor (
-    private noteService: NoteService,
-    private authService: AuthService,
+    private contaService: ContaService,
+    private authService: AutenticacaoService,
     private router: Router
 
   ) {}
@@ -59,12 +59,12 @@ tituloComp: string = 'Listar Anotações'
   // 4º passo: implementar o método que carregará todas as notas para este componente
 
   loadNotes(): void {
-    this.noteService.getNotes().subscribe({
+    this.contaService.getConta().subscribe({
       next: (response) => {
-        this.notes = response // aqui, atribuímos os dados recuperados da base para o array notes 
+        this.contas = response // aqui, atribuímos os dados recuperados da base para o array notes 
       },
       error: (error) => {
-        console.error('Erro ao carregar as anotações.', error)
+        console.error('Erro ao carregar as contas.', error)
       }
     })
   }
@@ -87,7 +87,7 @@ tituloComp: string = 'Listar Anotações'
     this.isLoggedIn = this.authService.isLoggedIn() // Verificando se o usuário existe
 
     if(this.isLoggedIn) {
-      this.authService.getCurrentUserEmail().subscribe({
+      this.authService.getCurrentUsuarioEmail().subscribe({
         next: (response) => {
           this.userEmail = response.email // aqui, obtivemos o valor do email do usuário
         },
