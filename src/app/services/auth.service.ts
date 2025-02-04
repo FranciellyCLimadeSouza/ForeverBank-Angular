@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 
 // fazer os imports necessarios
-import { HttpClient  } from '@angular/common/http'; // classe qua vai auxiliar na construção das requisições http feitas para o backend
+import { HttpClient, HttpHeaders  } from '@angular/common/http'; // classe qua vai auxiliar na construção das requisições http feitas para o backend
 import { Observable, tap} from 'rxjs'; // bibliotecas usada para operar com a assincronicidade necessaria para o funcionamento das requisições e repostas http
 // Observable: representa o fluxo de dados assincrono do projeto - na camada lógica
 // tap: operador que permite executar ações secundárias sem modifica o fluxo principal
@@ -57,12 +57,17 @@ export class AuthService {
     // 4º passo: definir o método de login
     // temos de transforma-lo numa requisição assincrona parametrizando o método par receber os dados com os quais ele vai lidar
     login(credentials: {email: string, password:string}): Observable<{message: string}>{
+      // definir, qui, uma constante para receber como valor as credenciais de acesso com o intuito de garantir que os dados de email e senha, realment cheguem ao backend
+      const authHeader = `Basic ${btoa(`${credentials.email}:${credentials.password}`)}` // encriptando as credenciais
+      console.log('Enviando para o backend: ' , credentials)   
+
       // definir a expressão de retorno do método/ requisição ao backend
       // http://localhost:8080/api/users/login
-      return this.http.post<{message:string}>(`${this.apiUrl}/users/login`, credentials, {withCredentials: true}).pipe(
-        tap((response) =>{
-          console.log('Login bem sucedido!', response.message)
-          localStorage.setItem('isLoggedIn', 'true') //atualiza o state/estado da aplicação
+      return this.http.post<{message:string}>(`${this.apiUrl}/users/login`, credentials, {headers: new HttpHeaders({'Content-Type': 'application/json'})})
+      .pipe(
+        tap(() =>{
+          console.log('Login bem sucedido!')
+          localStorage.setItem('authHeader', authHeader) //atualiza o state/estado da aplicação
         })
       )
     }
@@ -74,29 +79,42 @@ export class AuthService {
       localStorage: método que auxilia na psersitencia da sessão do usuario logado
     */
 
-      // 5º passo: definir um método para obter o usuario atual - que, no momento, está logado no sistema
+       // 5º passo: definir um novo método; este método possui um unico objetivo simples: verificar se o usuario esta logado no sistema
+       isLoggedIn(): boolean{
+        return !!localStorage.getItem('authHeader') // verificando se ele, usuario, esta logado e se há autenticação slva
+      }
+
+      // 6º passo: se o usuario estiver autenticado, vamos obter a autenticação
+      getAuthHeader(): string{
+        return localStorage.getItem('authHeader') || ''
+      }
+
+      // 7º passo: definir um método para obter o usuario atual - que, no momento, está logado no sistema
       getCurrentUserEmail(): Observable<{email: string}>{
         // definir a expressão de retorno do método
-        return this.http.get<{email: string}>(`${this.apiUrl}/users/current-user`, {withCredentials: true})
+        return this.http.get<{email: string}>(`${this.apiUrl}/users/current-user`, {
+          headers: new HttpHeaders({ Authorization: this.getAuthHeader()})
+        })
 
         // método/tarefa assincrona que recupera o usuario logado no sistema
         // requisição: get para a rota `${this.apiUrl}/users/current-user`, habilitando o uso de cookies {withCredentials: true}
       }
 
-      // 6º passo: definir o método de logout
+      // 8º passo: definir o método de logout
       //tambem tarefa assincrona
       logout(): Observable<void>{
-        return this.http.post<void>(`${this.apiUrl}/users/logout`, {}, {withCredentials: true}).pipe(
+        return this.http.post<void>(`${this.apiUrl}/users/logout`, {}, {headers: new HttpHeaders({
+          Authorization: this.getAuthHeader()
+        })})
+        .pipe(
           tap(() =>{
-            localStorage.removeItem('isLoggedIn')// remove o state/estado da autenticação, ou seja, encerrando a sessão de usuario.
+            localStorage.removeItem('authHeader')// remove o state/estado da autenticação, ou seja, encerrando a sessão de usuario.
+            console.log('Usuario deslogado!')
           })
         )
 
         // pipe(): este método é usado para auxiliar na execuçã de tarefas assincronas. O proposito do pipe é estabelecer um "canal" de comunicação direta entre recursos assincronos do componente.
       }
 
-      // 7º passo: definir um novo método; este método possui um unico objetivo simples: verificar se o usuario esta logado no sistema
-      isLoggedIn(): boolean{
-        return localStorage.getItem('isLoggedIn') === 'true' // verificando se ele, usuario, esta logado. Se não estiver, não sessão para persistir.
-      }
+     
 }

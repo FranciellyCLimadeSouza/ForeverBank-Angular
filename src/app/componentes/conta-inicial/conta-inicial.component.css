@@ -64,9 +64,7 @@
   }
   
   button:hover {
-  
-    background-color: #0056b3;
-  
+    background-color: #ff5800;
   }
   
   p {
@@ -100,6 +98,10 @@
     align-items: center;
     background: linear-gradient(to bottom, orange, red);
     font-family: Arial, sans-serif;
+ /*    background-image: url(../../../assets/imagemForeverBank.jpg);  */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
     z-index: -1;
   }
   .login-container {
@@ -137,7 +139,7 @@
     color: blue;
     text-decoration: none;
   }
-  .login-container button {
+  .container button {
     width: 100%;
     padding: 10px;
     background: orange;
@@ -145,7 +147,9 @@
     border-radius: 5px;
     color: white;
     font-size: 16px;
-    cursor: pointer;
+  }
+  .container button:hover {
+    background-color: #ff5800;
   }
   .login-container button i {
     margin-left: 5px;

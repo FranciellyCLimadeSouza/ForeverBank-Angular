@@ -1,5 +1,15 @@
 // OBJETIVO DESTE SERVICE: DISPONIBILIZAR AS CONSULTAS AO BACKEND PARA A MANIPULAÇÃO DAS ANOTAÇÕES QUE O USUARIO FIZER
 // import dos recursos para as requisições http
+
+
+
+/* http://localhost:8080/api/notes == endpoint geral
+ * http://localhost:8080/api/notes/getNotes         => recupera todoas as notas
+ * http://localhost:8080/api/notes/createNote       => cria uma anotação
+ * http://localhost:8080/api/notes/getNote/{id}     => recupera uma anotação pelo id 
+ * http://localhost:8080/api/notes/updateNote/{id} => atualiza um anaotação indetificda pelo id 
+ * http://localhost:8080/api/notes/deleteNote/{id}  => exclui uma anotação pelo id
+ * */
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Note } from '../models/note';
@@ -14,7 +24,7 @@ export class NoteService {
   private apiUrl = 'http://localhost:8080/api'
 
   // 2º passo: definir a injeção de dependencia - a partir da classe HttpClient
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { } // agora, com interceptor
 
     /*
   ========================================================================================
@@ -24,7 +34,7 @@ export class NoteService {
 
   // 3º passo: definir a requisição que obtem todas as anotações armazenadas na base
   getNotes(): Observable<Note[]>{
-    return this.http.get<Note[]>(`${this.apiUrl}/notes`,{withCredentials: true})
+    return this.http.get<Note[]>(`${this.apiUrl}/notes/getNotes`,{withCredentials: true})
     .pipe(
       catchError(this.handleError)
     )
@@ -37,7 +47,7 @@ export class NoteService {
 
     // 4º passo: definir o método/tarefa assincrona que obtem uma unica anotação por sua identificação
     getNoteById(id: number): Observable<Note>{
-      return this.http.get<Note>(`${this.apiUrl}/notes/${id}`, {withCredentials: true})
+      return this.http.get<Note>(`${this.apiUrl}/notes/getNote/${id}`, {withCredentials: true})
       .pipe(
         catchError(this.handleError)
       )
@@ -45,7 +55,7 @@ export class NoteService {
 
     // 5º passo: definir o método/tarefa assincrona que cria uma nova anotação e armazena na base
     createNote(note: Note): Observable<Note>{
-      return this.http.post<Note>(`${this.apiUrl}/notes/create`, note,{withCredentials: true})
+      return this.http.post<Note>(`${this.apiUrl}/notes/createNote`, note,{withCredentials: true})
       .pipe(
         catchError(this.handleError)
       )
@@ -53,7 +63,7 @@ export class NoteService {
 
     // 6º passo: definir o método/tarefa assincrona que atualiza/altera uma anotação desde que esteja devidamente armazenada na base
     updateNote(id: number, note: Note): Observable<Note>{
-      return this.http.put<Note>(`${this.apiUrl}/updateNotes/${id}`, note, {withCredentials: true})
+      return this.http.put<Note>(`${this.apiUrl}/notes/updateNote/${id}`, note, {withCredentials: true})
       .pipe(
         catchError(this.handleError)
       )
@@ -61,7 +71,7 @@ export class NoteService {
 
     // 7º passo: definir o método/tarefa assincrona que exclui uma anotação desde que esteja devidamente armazenada na base
     deleteNote(id: number): Observable<void>{
-      return this.http.delete<void>(`${this.apiUrl}/deleteNote/${id}`, {withCredentials: true})
+      return this.http.delete<void>(`${this.apiUrl}/notes/deleteNote/${id}`, {withCredentials: true})
       .pipe(
         catchError(this.handleError)
       )
