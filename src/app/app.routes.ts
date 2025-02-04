@@ -13,10 +13,20 @@ import { HeaderHomeComponent } from './componentes/header-home/header-home.compo
 import { RecuperarSenhaComponent } from './componentes/recuperar-senha/recuperar-senha.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { ContaInicialComponent } from './componentes/conta-inicial/conta-inicial.component';
+import { TransferenciaComponent } from './componentes/transferencias/transferencia.component';
+import { ExtratoComponent } from './componentes/extrato/extrato.component';
+import { InvestimentosComponent } from './componentes/investimentos/investimentos.component';
+import { CartoesComponent } from './componentes/cartoes/cartoes.component';
+import { PagamentosComponent } from './componentes/pagamentos/pagamentos.component';
 export const routes: Routes = [
     {path: 'home', component: HomeComponent}, 
     {path: 'login', component: LoginComponent}, 
-    {path: 'conta', component: ContaInicialComponent}, 
+    {path: 'conta', component: ContaInicialComponent},
+    {path: 'transferencias', component: TransferenciaComponent}, 
+    {path: 'extrato', component: ExtratoComponent}, 
+    {path: 'investimentos', component: InvestimentosComponent}, 
+    {path: 'cartoes', component: CartoesComponent},
+    {path: 'pagamentos', component: PagamentosComponent},  
     /* acima
             a rota está sendo criada da seguinte forma
             path: determina o nome da rota, ou seja, qual é o valor que devemos colocar na url do browser

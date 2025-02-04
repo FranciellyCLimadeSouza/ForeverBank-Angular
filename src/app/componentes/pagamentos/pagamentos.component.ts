@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 @Component({
-  selector: 'app-investimentos',
+  selector: 'app-pagamentos',
   standalone: true,
   imports: [SidebarComponent],
-  templateUrl: './investimentos.component.html',
-  styleUrl: './investimentos.component.css'
+  templateUrl: './pagamentos.component.html',
+  styleUrl: './pagamentos.component.css'
 })
-export class InvestimentosComponent {
+export class PagamentosComponent {
 
 }

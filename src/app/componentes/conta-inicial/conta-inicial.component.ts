@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-conta-inicial',
   standalone: true,
@@ -8,10 +9,11 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   styleUrl: './conta-inicial.component.css'
 })
 export class ContaInicialComponent {
+  tituloComp: string = 'conta'
+  constructor(private router: Router) {}
   saldo: number = 1000.00;
-
-  verExtrato() {
-    // Lógica para ver o extrato
-    console.log('Ver extrato');
+  
+  goToExtrato(): void {
+    this.router.navigate(['/extrato']);
   }
 }
