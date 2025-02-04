@@ -45,7 +45,7 @@ export class AutenticacaoService {
   registro(usuario: Usuario, roleName: string): Observable<{message: string}>{
     // agora, será preciso definir a expressão de retorno do método
     return this.http.post<{message: string}>(`${this.apiUrl}/usuarios/registro?roleName=${roleName}`, usuario)
-  }
+  }//@postmapping
 
   /*
     user: parametro/objeto vai conter os dados que queremos enviar para a base
@@ -68,7 +68,7 @@ export class AutenticacaoService {
       tap(() =>{
         console.log('Login bem sucedido!')
         localStorage.setItem('authHeader', authHeader) //atualiza o state/estado da aplicação
-      })
+      })//@postmapping
     )
   }
 
@@ -93,7 +93,7 @@ localStorage: método que auxilia na psersitencia da sessão do usuario logado
 // definir a expressão de retorno do método
       return this.http.get<{email: string}>(`${this.apiUrl}/usuarios/current-usuario`, {
         headers: new HttpHeaders({ Authorization: this.getAuthHeader()})
-    })
+    })//getmapping
 
 // método/tarefa assincrona que recupera o usuario logado no sistema
 // requisição: get para a rota `${this.apiUrl}/users/current-user`, habilitando o uso de cookies {withCredentials: true}
@@ -109,16 +109,17 @@ localStorage: método que auxilia na psersitencia da sessão do usuario logado
           tap(() =>{
             localStorage.removeItem('authHeader')// remove o state/estado da autenticação, ou seja, encerrando a sessão de usuario.
             console.log('Usuario deslogado!')
-          })
+          })//postmapping
         )
   // pipe(): este método é usado para auxiliar na execuçã de tarefas assincronas. O proposito do pipe é estabelecer um "canal" de comunicação direta entre recursos assincronos do componente.
   }
 
-  getUsuarioById(id: number): Observable<Usuario>{
-          return this.http.get<Usuario>(`${this.apiUrl}/registros/upLocalDateUsuario/${id}`, {withCredentials: true})
-          .pipe(
-            catchError(this.handleError)
-          )
+ // 6º passo: definir o método/tarefa assincrona que atualiza/altera uma anotação desde que esteja devidamente armazenada na base
+  updateUsuario(id: number, usuario: Usuario): Observable<Usuario>{
+      return this.http.put<Usuario>(`${this.apiUrl}/registros/upLocalDateUsuario/${id}`, usuario, {withCredentials: true})
+      .pipe(
+        catchError(this.handleError)
+      )//@putmapping
   }
     
   // função de tratamento de erros
