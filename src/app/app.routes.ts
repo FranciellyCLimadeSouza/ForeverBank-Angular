@@ -33,7 +33,7 @@ export const routes: Routes = [
 
             Então, para acessar o componente login, a partir da aplicação, o endereço informado para o browser deve ser: http://localhost:4200/login
     */
-    {path: 'header-home', component: HeaderHomeComponent},
+    {path:'header-home', component: HeaderHomeComponent},
    {path: 'cadastro', component: CadastroComponent},
    {path: 'recuperar-senha', component: RecuperarSenhaComponent}, 
    {path: 'perguntas', component: PerguntasComponent},
