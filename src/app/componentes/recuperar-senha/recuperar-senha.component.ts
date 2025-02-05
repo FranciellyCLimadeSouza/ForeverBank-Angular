@@ -16,8 +16,14 @@ import { LoginComponent } from '../login/login.component';
 })
 export class RecuperarSenhaComponent {
  errorMessage: string = ''
- //user: Usuario = new Usuario('', '', '')
-
+ //usuario: Usuario = new Usuario('','', '')
+ usuario: any = {
+  email: '',
+  senha: '',
+  nomeCompleto: '',
+  nascimento: ''
+ }
+ 
   constructor (private authService: AutenticacaoService, private router: Router) {}
 
   goToLogin(): void {
