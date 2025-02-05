@@ -8,5 +8,6 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   styleUrl: './cartoes.component.css'
 })
 export class CartoesComponent {
+  
 
 }
