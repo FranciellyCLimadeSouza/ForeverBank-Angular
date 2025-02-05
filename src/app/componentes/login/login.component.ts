@@ -11,7 +11,7 @@ import { RecuperarSenhaComponent } from '../recuperar-senha/recuperar-senha.comp
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, CommonModule,HeaderHomeComponent],
+  imports: [FormsModule, CommonModule,HeaderHomeComponent, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -28,7 +28,7 @@ credentials: any = {
   password: ''
   }
 
-  constructor (private authService: AutenticacaoService, private router: Router) {}
+  constructor (private AutenticacaoService: AutenticacaoService, private router: Router) {}
   goToRecuperar(): void {
     this.router.navigate(['/recuperar-senha']);
   }
@@ -36,7 +36,7 @@ credentials: any = {
   onSubmit(): void {
     // fazer o acesso à DI do service
 
-    this.authService.login(this.credentials).subscribe({
+    this.AutenticacaoService.login(this.credentials).subscribe({
       next: (response) => {
         console.log('Login bem sucedido!', response.message)
         this.router.navigate(['/conta-inicial']) // se tudo ocorrer bem, seremos, depois da autenticação redirecionados para a tela de anotações
