@@ -100,7 +100,7 @@ a:hover {
   align-items: center;
   font-family: Arial, sans-serif;
   background:linear-gradient(to right, #ff5800,#890078);
-  background-size: 100% 100%;
+  background-size: 100% 200%;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 0;
