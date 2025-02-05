@@ -1,23 +1,35 @@
 .login-container {
-  justify-content: center;
-  align-items: center;
-  max-width: 400px;
-  line-height: 1.5 !important;
-  margin: 50px auto;
-  top: -30%!important;
-  margin-bottom: 70px !important;
-  right: 20%;
-  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
+  width: 300px;
   padding: 20px;
   border-radius: 10px;
-  /*padding: 20px;
-
-  border: 1px solid #ccc;
-
+  right: 20%;
+  background-color: white;
+  top: -30%!important;
+  margin-bottom: 70px !important;
+  margin: 50px auto;
+  max-width: 400px;
+  line-height: 1.5 !important;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+.login-container button {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background: orange;
+  border: none;
   border-radius: 5px;
-
-  background-color: #f9f9f9;*/
-
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+.login-container button:hover {
+  background-color: #ff5800;
+  z-index: 2;
 }
 
 h2 {
@@ -56,29 +68,6 @@ input {
 
 }
 
-button {
-
-  width: 100%;
-
-  padding: 10px;
-
-  background-color: #007bff;
-
-  color: white;
-
-  border: none;
-
-  border-radius: 4px;
-
-  cursor: pointer;
-
-}
-
-button:hover {
-
-  background-color: #0056b3;
-
-}
 
 p {
 
@@ -114,6 +103,9 @@ a:hover {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 0;
+  background-image: url('../../../assets/home/cadastro.png'); /* Substitua pelo caminho da sua imagem */
+
 }
 .left-side {
   flex: 1;
@@ -142,15 +134,7 @@ a:hover {
   font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
 }
-.login-container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
-  width: 300px;
-  margin-right: 450px;
-}
+
 .login-container h2 {
   margin-bottom: 20px;
   text-align: center;
@@ -180,16 +164,7 @@ a:hover {
   color: blue;
   text-decoration: none;
 }
-.login-container button {
-  width: 100%;
-  padding: 10px;
-  background: orange;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
+
 .login-container button i {
   margin-left: 5px;
 }
