@@ -8,6 +8,7 @@ import { Usuario } from '../../models/user'; // Este é o model que "trata" todo
 import { response } from 'express';
 import { HeaderHomeComponent } from '../header-home/header-home.component';
 import { LoginComponent } from '../login/login.component';
+import { AutenticacaoService } from '../../services/auth.service';
 @Component({
   selector: 'app-cadastro',
   standalone: true, // Significa que este componente é "autossuficiente": significa que todos os recursos por ele, componente, que serão usados por ele, ficam aqui disponíveis - sem a necessidade de serem registrados com o decorator @NgModule
@@ -31,9 +32,15 @@ export class CadastroComponent {
   selectedRole: string = 'ROLE_USER' // esta será considerada a role padrão do usuário
 
   errorMessage: string = ''
+  usuario: any = {
+    email: '',
+    senha: '',
+    nomeCompleto: '',
+    nascimento: ''
+  };
 
   // 3º passo: praticar a injeção de dependência - a partir do service
-  constructor (private authService: AuthService, private router: Router) {}
+  constructor (private authService: AutenticacaoService, private router: Router) {}
 
   // 4º passo: definir um método onSubmit(): este método será chamado quando o usuário, no final do cadastro, clicar no botão para enviar os dados para o service que, por sua vez, vai enviar os dados para o endpoint no backend para que, assim, os dados possam ser armazenados no DB.
   goToLogin(): void {
