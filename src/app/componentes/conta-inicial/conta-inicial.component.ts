@@ -16,4 +16,8 @@ export class ContaInicialComponent {
   goToExtrato(): void {
     this.router.navigate(['/extrato']);
   }
+
+  goToSaldo(): void {
+    this.router.navigate(['/saldo']);
+  }
 }
