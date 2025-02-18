@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms'; // este recurso é necessário par
 import { AutenticacaoService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-// import { User } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
+import { Usuario } from '../../models/user'; // Este é o model que "trata" todos os dados referentes a usuários
 import { HeaderHomeComponent } from '../header-home/header-home.component';
 import { RecuperarSenhaComponent } from '../recuperar-senha/recuperar-senha.component';
 
