@@ -23,8 +23,9 @@ import { provideClientHydration } from '@angular/platform-browser';
 
 // inserir um novo recurso
 
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 // provideHttpClient: é uma função que auxiliará na construção das requisições http que serão feitas para o bakend
+import { authInterceptor } from './interception/auth.interceptor';
 
 // appConfing: é um objeto literal
 export const appConfig: ApplicationConfig = {
@@ -33,6 +34,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), 
     provideClientHydration(),
     // aqui, estamos registrando a função provideHttpClient como um recurso que pode ser acessado de qualquer "pedaço " do projeto'
-    provideHttpClient()
+    provideHttpClient(withInterceptors([authInterceptor]))
   ]
 };
