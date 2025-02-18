@@ -15,6 +15,14 @@
         <input type="password" id="password" [(ngModel)] = "usuario.senha" name="password" required /> 
         <label for="fullname">Nome Completo</label>
         <input type="text" id="fullname" [(ngModel)] = "usuario.nomeCompleto" name="fullname" required />
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" [(ngModel)] = "usuario.telefone" name="telefone" required />
+        <label for="cpfCnpj">Cpf</label>
+        <input type="text" id="cpfCnpj" [(ngModel)] = "usuario.cpfCnpj" name="cpfCnpj" required />
+        <label for="endereco">Endereço Completo</label>
+        <input type="text" id="endereco" [(ngModel)] = "usuario.endereco" name="endereco" required />
+        <label for="datanascimento">Data de Nascimeto</label>
+        <input type="date" id="datanascimento" [(ngModel)] = "usuario.dataNascimento" name="datanascimento" required />
         <div class="form-group">
             <label for="role">Tipo de Usuario</label>
             <select id="role" [(ngModel)] = "selectedRole" name="roleName" required>
