@@ -1,16 +1,16 @@
 .login-container {
   border: 1px solid #ccc;
   box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
-  width: 300px;
-  padding: 20px;
+  width: 600px;
+  padding: 15px;
   border-radius: 10px;
   right: 20%;
   background-color: white;
-  top: -30%!important;
-  margin-bottom: 70px !important;
-  margin: 50px auto;
-  max-width: 400px;
-  line-height: 1.5 !important;
+  top: 50%!important;
+  margin-bottom: 140px !important;
+  margin: 150px auto;
+  max-width: 500px;
+  line-height: 1.2 !important;
   align-items: center;
   justify-content: center;
   z-index: 0;
@@ -93,7 +93,7 @@ a:hover {
 .full-screen-container {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 130vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
