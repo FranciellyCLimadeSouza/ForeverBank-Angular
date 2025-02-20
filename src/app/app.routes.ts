@@ -41,7 +41,7 @@ export const routes: Routes = [
    {path: 'transferencias', component: TransferenciaComponent},
    {path: 'conta-inicial', component: ContaInicialComponent},
    {path: 'conta-inicial/saldo', component: ContaInicialComponent},
-   {path: 'login', component: LoginComponent},
+   //{path: 'login', component: LoginComponent},
    // http://localhost:4200/anotacoes/editar/2
    {path: 'anotacoes/editar/:id', component: NotesFormComponent},
    // na ausencia de uma rota especifica, estamos definindo uma rota-padrão, ou seja, sem rota especifica será renderizado, pelo browser, o componente que está relacionado a rota '/login' - componente LoginComponent; 
